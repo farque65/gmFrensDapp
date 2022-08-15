@@ -89,7 +89,6 @@ export const UserContextProvider = ({ children }: { children: any }) => {
 
 	//update passport verified status
 	useEffect(() => {
-		console.log('score ', passportScore);
 		// Default score requirement set to 0.5 so user only needs one valid stamp
 		if (passportScore >= 0.5) {
 			console.log('updated passport score');
@@ -97,7 +96,7 @@ export const UserContextProvider = ({ children }: { children: any }) => {
 		} else {
 			setIsVerifiedPassport(false);
 		}
-	}, [userDid, address, loggedIn]);
+	}, [userDid, address, loggedIn, passportScore]);
 
 	useEffect(() => {
 		if (address) {

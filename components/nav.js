@@ -77,6 +77,7 @@ export default function Nav() {
 	useEffect(() => {
 		scorer?.getScore(address).then((result) => {
 			setPassportScore(result);
+			console.log('updated passport score ', result);
 		});
 	}, [address, userDid]);
 
